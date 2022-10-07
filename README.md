@@ -39,7 +39,7 @@ Frensh-to-Arabic-Chinese-English-German-Italian-Japanese-Portuguese-Russian-Span
 
 ```sh
 webext-translator -base="_locales/fr/messages.json"
-``
+```
 
 Because it needs a default, it will automatically look for an English translation in
 `_locales/en/messages.json` if no arguments are passed, and will generate translations
