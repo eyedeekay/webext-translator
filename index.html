@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <title>
+      WebExtension Tra...
+    </title>
+    <meta name="author" content="eyedeekay" />
+    <meta name="description" content="webext-translator.git" />
+    <meta name="keywords" content="trunk" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="showhider.css" />
+  </head>
+  <body>
+    <div id="navbar">
+      <a href="#shownav">
+        Show navigation
+      </a>
+      <div id="shownav">
+        <div id="hidenav">
+          <ul>
+            <li>
+              <a href="..">
+                Up one level ^
+              </a>
+            </li>
+            <li>
+              <a href="index.html">
+                index
+              </a>
+            </li>
+          </ul>
+          <br>
+          <a href="#hidenav">
+            Hide Navigation
+          </a>
+        </div>
+      </div>
+    </div>
+    <a id="returnhome" href="/">
+      /
+    </a>
+    <h1>
+      WebExtension Translator
+    </h1>
+    <p>
+      This is a small application for generating translations from a
+      <code>
+        messages.json
+      </code>
+      file
+      used by a WebExtension. It loads a
+      <code>
+        messages.json
+      </code>
+      file, gathers tranlatable strings
+      from it, passes them to a LibreTranslate instance(my libretranslate instance within
+      I2P), and uses it to generate a new
+      <code>
+        messages.json
+      </code>
+      file containing the translations.
+    </p>
+    <p>
+      It is designed to be run from the root of the WebExtension directory where the
+      <code>
+        _locales/
+      </code>
+      directory is located.
+    </p>
+    <h2>
+      Installation
+    </h2>
+    <p>
+      Install it with:
+    </p>
+    <pre><code class="language-sh">go install github.com/eyedeekay/webext-translator@latest
+</code></pre>
+    <p>
+      then, to run it:
+    </p>
+    <pre><code class="language-sh">~/go/bin/webext-translator
+</code></pre>
+    <h2>
+      Usage
+    </h2>
+    <p>
+      It is possible to generate one translation at a time, or all translations at once.
+    </p>
+    <p>
+      Russian-to-French example:
+    </p>
+    <pre><code class="language-sh">webext-translator -base=&quot;_locales/ru/messages.json&quot; -lang=&quot;fr&quot;
+</code></pre>
+    <p>
+      Frensh-to-Arabic-Chinese-English-German-Italian-Japanese-Portuguese-Russian-Spanish example
+    </p>
+    <p>
+      `
+      <code>
+        sh
+        webext-translator -base=&quot;_locales/fr/messages.json&quot;
+      </code>
+    </p>
+    <p>
+      Because it needs a default, it will automatically look for an English translation in
+      <code>
+        _locales/en/messages.json
+      </code>
+      if no arguments are passed, and will generate translations
+      for all supported languages.
+    </p>
+    <div id="sourcecode">
+      <span id="sourcehead">
+        <strong>
+          Get the source code:
+        </strong>
+      </span>
+      <ul>
+        <li>
+          <a href="https://github.com/eyedeekay/webext-translator.git">
+            Source Repository: (https://github.com/eyedeekay/webext-translator.git)
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>
+      <a href="https://geti2p.net/">
+        <img src="i2plogo.png"></img>
+        I2P
+      </a>
+    </div>
+  </body>
+</html>
